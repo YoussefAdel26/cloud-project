@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    build: 
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  
+
+  db:
+    build:
+      dockerfile: eugh
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
